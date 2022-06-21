@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="-7.0" layoutY="-4.0" prefHeight="473.0" prefWidth="753.0">
+         <children>
+            <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+            <VBox layoutX="33.0" layoutY="126.0" prefHeight="240.0" prefWidth="86.0">
+               <children>
+                  <Label text="Com Port">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Baud Rate">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Data Bits">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="Stop Bits">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Parity Bits">
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label text="COM Status">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="148.0" layoutY="126.0" prefHeight="240.0" prefWidth="150.0">
+               <children>
+                  <ComboBox fx:id="comPort" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="baudRate" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="dataBits" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="stopBits" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="parityBits" prefWidth="150.0" />
+                  <ProgressBar fx:id="comStatus" prefHeight="24.0" prefWidth="150.0" progress="0.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </ProgressBar>
+               </children>
+            </VBox>
+            <TextField fx:id="TextField_dataToSend" layoutX="328.0" layoutY="125.0" prefHeight="25.0" prefWidth="284.0" />
+            <Button fx:id="sendButton" layoutX="632.0" layoutY="125.0" mnemonicParsing="false" onAction="#SendActionPerformed" text="SEND" />
+            <TextArea fx:id="incomingData" layoutX="323.0" layoutY="172.0" prefHeight="184.0" prefWidth="355.0" />
+            <Button fx:id="openButton" layoutX="26.0" layoutY="403.0" mnemonicParsing="false" onAction="#OpenActionPerformed" prefHeight="25.0" prefWidth="100.0" text="OPEN" />
+            <Button fx:id="closeButton" layoutX="173.0" layoutY="403.0" mnemonicParsing="false" onAction="#CloseActionPerformed" prefHeight="25.0" prefWidth="118.0" text="CLOSE" />
+            <Label layoutX="440.0" layoutY="406.0" text="END LINE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="endLine" layoutX="528.0" layoutY="404.0" prefHeight="25.0" prefWidth="168.0" />
+            <Label layoutX="33.0" layoutY="68.0" prefHeight="37.0" prefWidth="61.0" text="Serial">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="serialButton" layoutX="148.0" layoutY="23.0" mnemonicParsing="false" onAction="#SwitchSceneToSerial" prefHeight="25.0" prefWidth="69.0" text="Serial" />
+            <Button layoutX="264.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Socket" />
+            <Button layoutX="369.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="USB" />
+            <Button layoutX="469.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="HID" />
+            <Button layoutX="576.0" layoutY="23.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Printer Status" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
